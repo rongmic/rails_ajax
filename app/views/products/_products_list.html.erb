@@ -1,0 +1,15 @@
+<% unless @products.empty? %>
+	<table>
+		<tr>
+			<th><b>Product Name</b></th>
+      <th cols="2"></th>
+		</tr>
+		<% @products.each do |product| %>
+			<tr>
+        <td><%= product.name %></td>
+				<td><%= link_to "Delete", {:controller => "products", :action =>"delete", :id => product}, :class => "delete" %></td>
+        <td><%= link_to "Edit", "javascript:void(0);", :rel => product.id, :class => "edit" %></td>
+			</tr>
+		<% end %>
+	</table>
+<% end %>
